@@ -1,0 +1,22 @@
+.title {
+  color: light-dark(var(--mantine-color-red-9), var(--mantine-color-blue-9));
+  font-size: rem(10em);
+  font-weight: 900;
+  letter-spacing: rem(-2px);
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    font-size: rem(7em);
+  }
+
+  @media (max-width: $mantine-breakpoint-md) {
+    font-size: rem(4em);
+  }
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(2.5em);
+  }
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: rem(1.8em);
+  }
+}

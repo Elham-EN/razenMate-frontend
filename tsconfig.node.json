@@ -1,0 +1,13 @@
+{
+  // Use a Base TypeScript Configuration: If you have a base tsconfig.json and
+  // other specialized configurations like tsconfig.node.json, you can extend
+  // the base configuration to avoid repeated or conflicting configurations.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include": ["vite.config.ts"],
+  "exclude": ["**/__tests__/**", "**/*.test.ts", "**/*.spec.ts", "node_modules"]
+}
