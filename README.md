@@ -1,14 +1,11 @@
-# Mantine Vite template
+# RazenMate - Real-Time Chat App (Frontend)
+
+RazenMate is a real-time chat application built with the modern developer and user in mind. Inspired by popular platforms like Facebook Messenger, RazenMate seeks to offer instant, secure, and feature-rich communication tailored for a global audience.
 
 ## Features
 
-This template comes with the following features:
-
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+- Real-Time Messaging: Experience instant communication with our optimized backend infrastructure.
+- End-to-End Encryption: User privacy is paramount. Our chats are encrypted to ensure maximum security.
 
 ## npm scripts
 
