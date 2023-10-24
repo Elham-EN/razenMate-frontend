@@ -1,13 +1,37 @@
 # RazenMate - Real-Time Chat App (Frontend)
 
-RazenMate is a real-time chat application built with the modern developer and user in mind. Inspired by popular platforms like Facebook Messenger, RazenMate seeks to offer instant, secure, and feature-rich communication tailored for a global audience.
+Welcome to RazenMate, a real-time chat application I developed as a demonstration of my proficiency and passion for software engineering. This project encapsulates a broad spectrum of modern technologies and methodologies, offering a glimpse into my hands-on experience and expertise.
+
+## Motivation
+
+- Deepen my understanding of real-time communication protocols and tools.
+- Showcase my skills in frontend and backend integration.
+- Experiment with modern design and UI/UX principles.
+- Offer a tangible representation of my coding style, architectural decisions, and problem-solving approach to potential employers.
 
 ## Features
 
-- Real-Time Messaging: Experience instant communication with our optimized backend infrastructure.
-- End-to-End Encryption: User privacy is paramount. Our chats are encrypted to ensure maximum security.
+- Instant Messaging: Empowered by WebSocket with GraphQL subscriptions to ensure fluid real-time communication.
+- User Authentication: Secure sign-up and login mechanisms.
+- Modern & Responsive UI: Designed with React for a seamless user experience across devices.
+- Notifications: Real-time alerts for new messages using Redis for caching and quick retrievals.
+- Search Functionality: Efficiently locate past conversations or contacts.
+
+## Tech Stack
+
+# Get started
+
+Clone the repository
+
+```
+git@github.com:Elham-EN/razenMate-frontend.git
+```
 
 ## npm scripts
+
+```
+npm cd frontend && npm install
+```
 
 ## Build and dev scripts
 
