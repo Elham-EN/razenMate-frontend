@@ -13,6 +13,10 @@ import { SubscriptionClient } from "subscriptions-transport-ws";
 import { onError } from "@apollo/client/link/error";
 import { useUserStore } from "./store/userStore";
 import { getMainDefinition } from "@apollo/client/utilities";
+import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
+
+loadErrorMessages();
+loadDevMessages();
 
 /**
  * The primary purpose of the `refreshToken` function is to make a GraphQL
@@ -56,10 +60,13 @@ const wsLink = new WebSocketLink(
 );
 
 /**
- * Allows the client to respond gracefully to authentication errors by trying to
- * refresh the access token and retrying the GraphQL operation. If it can't refresh
- * the token or encounters certain errors like "Refresh token not found", it can
- * perform other actions like logging the user out.
+ * `errorLink` handles authentication-related GraphQL errors on the client side.
+ * If a request is unauthenticated, it attempts to refresh the access token and retries
+ * the operation up to a maximum number of retries (`maxRetry`). If the refresh token
+ * is not found or other authentication errors occur, it may trigger other responses
+ * like resetting the user's state. An Observable is used to create a stream of
+ * asynchronous operations, allowing for the possibility of retrying the GraphQL
+ * operation after refreshing the token.
  */
 const errorLink = onError(({ graphQLErrors, operation, forward }) => {
   for (const err of graphQLErrors!) {
@@ -105,12 +112,21 @@ const errorLink = onError(({ graphQLErrors, operation, forward }) => {
  */
 const uploadLink = createUploadLink({
   uri: "http://localhost:3000/graphql",
-  credentials: "include",
+  credentials: "include", // for cookies
   headers: {
     "apollo-require-preflight": "true",
   },
 });
 
+/**
+ * The split function in the provided code checks if a GraphQL operation is
+ * a subscription. If it is, the operation is processed using the WebSocket
+ * link (wsLink). If it's not a subscription (i.e., it's a regular query or
+ * mutation), then the operation goes through the chain of error handling
+ * (errorLink) and file uploading (uploadLink). This is a common pattern in
+ * Apollo Client to differentiate the handling of subscriptions from other
+ * types of operations.
+ */
 const link = split(
   // Split based on operation type
   ({ query }) => {
