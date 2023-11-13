@@ -2,7 +2,6 @@ import React, { ReactElement, useState } from "react";
 import { useGeneralStore } from "../../store/generalStore";
 import { useUserStore } from "../../store/userStore";
 import {
-  AppShell,
   Center,
   Tooltip,
   UnstyledButton,
@@ -14,12 +13,9 @@ import {
 import {
   IconUser,
   IconLogout,
-  IconBrandMessenger,
   IconBrandWechat,
   IconLogin,
   IconHome2,
-  Icon,
-  IconSwitchHorizontal,
   IconBrandHipchat,
 } from "@tabler/icons-react";
 
@@ -43,7 +39,7 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
         className={classes.link}
         data-active={active || undefined}
       >
-        <Icon style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
+        <Icon style={{ width: rem(30), height: rem(30) }} stroke={1.5} />
       </UnstyledButton>
     </Tooltip>
   );
@@ -55,7 +51,7 @@ export default function Sidebar(): ReactElement {
   const toggleProfileSettingsModal = useGeneralStore(
     (state) => state.toggleProfileSettingModal
   );
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(2);
 
   const links = mockdata.map((link, index) => (
     <NavbarLink

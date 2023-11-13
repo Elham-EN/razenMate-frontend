@@ -2,7 +2,7 @@ import React, { ReactDOM, ReactElement, ReactNode } from "react";
 import { Flex } from "@mantine/core";
 
 interface MainLayoutProps {
-  children: ReactNode;
+  children: ReactElement;
 }
 
 function MainLayout({ children }: MainLayoutProps): ReactElement {

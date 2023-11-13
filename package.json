@@ -19,6 +19,7 @@
   "dependencies": {
     "@apollo/client": "^3.8.6",
     "@mantine/core": "7.1.5",
+    "@mantine/form": "^7.2.1",
     "@mantine/hooks": "7.1.5",
     "@tabler/icons-react": "^2.40.0",
     "@types/apollo-upload-client": "^17.0.4",
